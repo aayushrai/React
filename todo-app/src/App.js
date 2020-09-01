@@ -47,7 +47,6 @@ useEffect(()=>{
             {todos.map(todo => (
                 <Todo text={todo}></Todo>
             ))}
-            <li></li>
         </ul>   
     </div>
   );
