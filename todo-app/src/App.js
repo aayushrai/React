@@ -14,7 +14,7 @@ useEffect(()=>{
     //this load when app.js loads
     db.collection('todos').orderBy('timestamp','desc').onSnapshot(snapshot => {
         console.log(snapshot.docs.map(doc => doc.data()));
-        setTodos(snapshot.docs.map(doc => doc.data().todo))
+        setTodos(snapshot.docs.map(doc => ({id:doc.id,todo:doc.data().todo})))
     }) 
 },[]);
 
@@ -32,7 +32,7 @@ useEffect(()=>{
     }
     return (
     <div class="App">
-        <h1>Hello this is edith! {1+2}</h1>
+        <h1>Hello this is edith!</h1>
 
         <form>
             <FormControl>
